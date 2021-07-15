@@ -13,11 +13,13 @@ class Test001Login:
         self.driver = setup
         self.driver.get(self.baseURL)
         actual_title = self.driver.title
-        self.driver.close()
 
         if actual_title == "Your store. Login":
             assert True
+            self.driver.close()
         else:
+            self.driver.save_screenshot("Screenshots/test_home_page_title.png")
+            self.driver.close()
             assert False
 
     def test_login(self, setup):
@@ -28,9 +30,11 @@ class Test001Login:
         self.lp.set_password(self.password)
         self.lp.click_login()
         actual_title = self.driver.title
-        self.driver.close()
 
         if actual_title == "Dashboard / nopCommerce administration":
             assert True
+            self.driver.close()
         else:
+            self.driver.save_screenshot("Screenshots/test_login.png")
+            self.driver.close()
             assert False
