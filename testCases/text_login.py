@@ -1,6 +1,3 @@
-import pytest
-from selenium import webdriver
-import time
 from pageObjects.LoginPage import LoginPage
 
 
